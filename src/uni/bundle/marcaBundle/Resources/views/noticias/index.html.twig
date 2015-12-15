@@ -1,0 +1,36 @@
+{% extends 'uniMarcaBundle::layout.html.twig' %}
+
+
+{% block contenido -%}
+    <head>
+
+        <center><h1>MARCA</h1></center>
+   
+    <head>
+
+        <tbody>
+        {% for entity in entities %}
+            
+         <a class="link" href="{{ path('noticias_show', { 'id': entity.id }) }}">{{ entity.titulo }}</a>
+                <br>
+                {% if entity.fechaPub %}{{ entity.fechaPub|date('Y-m-d ') }}{% endif %}
+                <br>
+                 
+                
+                <img src="{{ asset('bundles/unimarca/imagenes/'~ entity.foto  ~ '') }}" width=40% height=40%/><br>
+                {{ entity.autor }}<br>
+                
+                
+               
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('noticias_new') }}">
+                Crear una nueva noticia
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

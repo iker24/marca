@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+   <center><h1>LIstado de noticias con la palabra {{titulo}} en el titulo</h1></center>
+
+        <tbody>
+        {% for entity in tabla %}
+            
+                <a href="{{ path('noticias_show', { 'id': entity.id }) }}">{{ entity.titulo }}</a>
+                <br>
+                {% if entity.fechaPub %}{{ entity.fechaPub|date('Y-m-d H:i:s') }}{% endif %}
+                <br>
+                
+                {{ entity.contenido }}<br>
+                <img src="{{ asset('bundles/unimarca/imagenes/'~ entity.foto  ~ '') }}" width=40% height=40%/><br>
+                {{ entity.autor }}<br>
+                
+                
+               
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('noticias_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+ {% endblock %}

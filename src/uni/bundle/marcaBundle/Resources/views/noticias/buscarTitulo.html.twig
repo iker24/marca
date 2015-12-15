@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    Tienes que pedir un nombre
+    <br>Buscar titulo:
+<form action="{{path('noticias_responder_titulo')}}" method="POST">
+    <input type="text" name="titulo" value="Introduzca EL PUTO titulo">
+    <input type="submit" value="OK">
+</form>
+ {% endblock %}

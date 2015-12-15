@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+ {% block body %}
+     
+     
+       <div id="contenido">
+            {% block contenido %}
+                
+                {% endblock %}
+        </div>
+ 
+           <div id="menuLateral">
+            {% block menuLateral %}
+                
+                {% endblock %}
+        </div>
+ 
+        <div id="pie">
+            {% block pie %}
+                <a href="{{ path('noticias_buscar_titulolike')}}"> Buscar por titulo</a>
+                {% endblock %}
+        </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ {% endblock %}
+
+        {# empty Twig template #}
+

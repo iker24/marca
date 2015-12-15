@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    Tienes que pedir un nombre
+    <br>Buscar autor:
+<form action="{{path('noticias_responder_autor')}}" method="POST">
+    <input type="text" name="autor" value="Introduzca EL PUTO autoor">
+    <input type="submit" value="OK">
+</form>
+ {% endblock %}

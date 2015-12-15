@@ -1,0 +1,10 @@
+{% extends 'uniMarcaBundle::layout.html.twig' %}
+
+{% block contenido %}
+    
+    <br>Buscar palabra que este en el titulo:
+<form action="{{path('noticias_responder_titulolike')}}" method="POST">
+    <input type="text" name="titulo" value="Introduzca EL PUTO titulo">
+    <input type="submit" value="OK">
+</form>
+ {% endblock %}

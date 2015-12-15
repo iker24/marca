@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>comentarios</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titulocom</th>
+                <td>{{ entity.tituloCom }}</td>
+            </tr>
+            <tr>
+                <th>Descom</th>
+                <td>{{ entity.desCom }}</td>
+            </tr>
+            <tr>
+                <th>Fechacom</th>
+                <td>{{ entity.fechaCom }}</td>
+            </tr>
+            <tr>
+                <th>Nick</th>
+                <td>{{ entity.nick }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('comentarios') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('comentarios_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
