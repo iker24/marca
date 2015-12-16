@@ -62,13 +62,13 @@ class __TwigTemplate_724a7ece6d8657c86e344677eb35195b803aa7c4b3948f9754a01340116
                         <a href=\"";
             // line 22
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("categorias_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Show</a>
                     </li>
                     <li>
                         <a href=\"";
             // line 25
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("categorias_edit", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
-            echo "\">edit</a>
+            echo "\">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -88,7 +88,7 @@ class __TwigTemplate_724a7ece6d8657c86e344677eb35195b803aa7c4b3948f9754a01340116
         // line 36
         echo $this->env->getExtension('routing')->getPath("categorias_new");
         echo "\">
-                Create a new entry
+                Crear una nueva categoria
             </a>
         </li>
     </ul>

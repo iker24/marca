@@ -122,6 +122,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/anuncios')) {
+            // anuncios
+            if (rtrim($pathinfo, '/') === '/anuncios') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'anuncios');
+                }
+
+                return array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::indexAction',  '_route' => 'anuncios',);
+            }
+
+            // anuncios_show
+            if (preg_match('#^/anuncios/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_show')), array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::showAction',));
+            }
+
+            // anuncios_new
+            if ($pathinfo === '/anuncios/new') {
+                return array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::newAction',  '_route' => 'anuncios_new',);
+            }
+
+            // anuncios_create
+            if ($pathinfo === '/anuncios/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_anuncios_create;
+                }
+
+                return array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::createAction',  '_route' => 'anuncios_create',);
+            }
+            not_anuncios_create:
+
+            // anuncios_edit
+            if (preg_match('#^/anuncios/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_edit')), array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::editAction',));
+            }
+
+            // anuncios_update
+            if (preg_match('#^/anuncios/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_anuncios_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_update')), array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::updateAction',));
+            }
+            not_anuncios_update:
+
+            // anuncios_delete
+            if (preg_match('#^/anuncios/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_anuncios_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_delete')), array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\anunciosController::deleteAction',));
+            }
+            not_anuncios_delete:
+
+        }
+
         if (0 === strpos($pathinfo, '/categorias')) {
             // categorias
             if (rtrim($pathinfo, '/') === '/categorias') {

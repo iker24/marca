@@ -1,7 +1,7 @@
 <?php
 
 namespace uni\bundle\marcaBundle\Entity;
-
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -166,4 +166,9 @@ $this->allnoticias = new ArrayCollection();
     {
         return $this->allnoticias;
     }
+    
+    public function __toString() {
+     return $this->nombre;
+}
+
 }

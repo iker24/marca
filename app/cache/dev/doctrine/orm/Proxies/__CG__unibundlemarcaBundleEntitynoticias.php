@@ -64,10 +64,10 @@ class noticias extends \uni\bundle\marcaBundle\Entity\noticias implements \Doctr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'id', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'titulo', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'contenido', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'foto', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'autor', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'fechaPub', 'categoria', 'allcomentarios');
+            return array('__isInitialized__', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'id', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'titulo', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'contenido', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'foto', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'autor', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'fechaPub', 'categoria', 'allcomentarios', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'allanuncios');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'id', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'titulo', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'contenido', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'foto', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'autor', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'fechaPub', 'categoria', 'allcomentarios');
+        return array('__isInitialized__', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'id', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'titulo', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'contenido', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'foto', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'autor', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'fechaPub', 'categoria', 'allcomentarios', '' . "\0" . 'uni\\bundle\\marcaBundle\\Entity\\noticias' . "\0" . 'allanuncios');
     }
 
     /**
@@ -362,6 +362,39 @@ class noticias extends \uni\bundle\marcaBundle\Entity\noticias implements \Doctr
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
 
         return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAllanuncio(\uni\bundle\marcaBundle\Entity\anuncios $allanuncios)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAllanuncio', array($allanuncios));
+
+        return parent::addAllanuncio($allanuncios);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAllanuncio(\uni\bundle\marcaBundle\Entity\anuncios $allanuncios)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAllanuncio', array($allanuncios));
+
+        return parent::removeAllanuncio($allanuncios);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAllanuncios()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAllanuncios', array());
+
+        return parent::getAllanuncios();
     }
 
 }
