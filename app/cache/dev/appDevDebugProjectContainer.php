@@ -3037,6 +3037,7 @@ class appDevDebugProjectContainer extends Container
 
         $instance->addPath('/home/iker/symfony2/marca/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views', 'Framework');
         $instance->addPath('/home/iker/symfony2/marca/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views', 'Security');
+        $instance->addPath('/home/iker/symfony2/marca/app/Resources/TwigBundle/views', 'Twig');
         $instance->addPath('/home/iker/symfony2/marca/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views', 'Twig');
         $instance->addPath('/home/iker/symfony2/marca/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('/home/iker/symfony2/marca/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');

@@ -2816,6 +2816,10 @@
         <argument>Security</argument>
       </call>
       <call method="addPath">
+        <argument>/home/iker/symfony2/marca/app/Resources/TwigBundle/views</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
         <argument>/home/iker/symfony2/marca/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>

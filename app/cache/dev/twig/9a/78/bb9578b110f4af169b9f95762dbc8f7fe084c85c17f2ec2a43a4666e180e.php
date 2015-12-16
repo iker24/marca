@@ -28,38 +28,42 @@ class __TwigTemplate_9a78bb9578b110f4af169b9f95762dbc8f7fe084c85c17f2ec2a43a4666
     public function block_contenido($context, array $blocks = array())
     {
         // line 5
-        echo "<center><h1>MARCA</h1></center>
+        echo "<head>
+
+        <center><h1>MARCA</h1></center>
+   
+    <head>
 
         <tbody>
         ";
-        // line 8
+        // line 12
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 9
+            // line 13
             echo "            
          <a class=\"link\" href=\"";
-            // line 10
+            // line 14
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("noticias_show", array("id" => $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "id"))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "titulo"), "html", null, true);
             echo "</a>
                 <br>
                 ";
-            // line 12
+            // line 16
             if ($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "fechaPub")) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "fechaPub"), "Y-m-d "), "html", null, true);
             }
-            // line 13
+            // line 17
             echo "                <br>
-                
+                 
                 
                 <img src=\"";
-            // line 16
+            // line 20
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((("bundles/unimarca/imagenes/" . $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "foto")) . "")), "html", null, true);
             echo "\" width=40% height=40%/><br>
                 ";
-            // line 17
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "autor"), "html", null, true);
             echo "<br>
                 
@@ -70,14 +74,14 @@ class __TwigTemplate_9a78bb9578b110f4af169b9f95762dbc8f7fe084c85c17f2ec2a43a4666
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
+        // line 26
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 27
+        // line 31
         echo $this->env->getExtension('routing')->getPath("noticias_new");
         echo "\">
                 Crear una nueva noticia
@@ -99,6 +103,6 @@ class __TwigTemplate_9a78bb9578b110f4af169b9f95762dbc8f7fe084c85c17f2ec2a43a4666
 
     public function getDebugInfo()
     {
-        return array (  81 => 27,  74 => 22,  63 => 17,  59 => 16,  54 => 13,  50 => 12,  43 => 10,  40 => 9,  36 => 8,  31 => 5,  28 => 4,);
+        return array (  85 => 31,  78 => 26,  67 => 21,  63 => 20,  58 => 17,  54 => 16,  47 => 14,  44 => 13,  40 => 12,  31 => 5,  28 => 4,);
     }
 }

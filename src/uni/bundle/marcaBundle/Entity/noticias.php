@@ -262,10 +262,51 @@ protected $allcomentarios;
 
 public function __construct() {
 $this->allcomentarios = new ArrayCollection();
+$this->allanuncios = new ArrayCollection();
 }
 public function __toString() {
      return $this->titulo;
 }
- 
 
+  /**
+* @ORM\ManyToMany(targetEntity="anuncios", mappedBy="allnoticias")
+*/
+
+private $allanuncios;
+
+
+
+
+    /**
+     * Add allanuncios
+     *
+     * @param \uni\bundle\marcaBundle\Entity\anuncios $allanuncios
+     * @return noticias
+     */
+    public function addAllanuncio(\uni\bundle\marcaBundle\Entity\anuncios $allanuncios)
+    {
+        $this->allanuncios[] = $allanuncios;
+
+        return $this;
+    }
+
+    /**
+     * Remove allanuncios
+     *
+     * @param \uni\bundle\marcaBundle\Entity\anuncios $allanuncios
+     */
+    public function removeAllanuncio(\uni\bundle\marcaBundle\Entity\anuncios $allanuncios)
+    {
+        $this->allanuncios->removeElement($allanuncios);
+    }
+
+    /**
+     * Get allanuncios
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAllanuncios()
+    {
+        return $this->allanuncios;
+    }
 }

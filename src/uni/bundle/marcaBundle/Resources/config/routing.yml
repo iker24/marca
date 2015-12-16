@@ -1,3 +1,7 @@
+uni_marca_anuncios:
+    resource: "@uniMarcaBundle/Resources/config/routing/anuncios.yml"
+    prefix:   /anuncios
+
 uni_marca_categorias:
     resource: "@uniMarcaBundle/Resources/config/routing/categorias.yml"
     prefix:   /categorias
