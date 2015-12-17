@@ -1,10 +1,33 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+   {# Ahora viene el javascript #}
+
+<script type="text/javascript">
+    function submitform(obj) {
+        document.forms["selectCats"].submit();
+    }
+</script>
+
+{# Fin del javascript #}
+    
+    
+    
+    
     Buscar una categoria
-    <br>Buscar autor:
-<form action="{{path('categorias_encontrado')}}" method="POST">
-    <input type="text" name="nombre" value="Introduzca la categoria:">
-    <input type="submit" value="Buscar">
+    
+<form id="selectCats" action="{{path('categorias_encontrado')}}" method="POST">
+ 
+  <select name="nombre" onChange="submitform(this)">
+    <option value="Todas">Todas</option>
+    {% for entity in entities %}
+        <option value={{entity.descCat}}>{{entity.descCat}}</option>
+    {% endfor %}
+ </select> 
+ <input type="submit" value="Buscar">
+
+
 </form>
+    
+    
  {% endblock %}

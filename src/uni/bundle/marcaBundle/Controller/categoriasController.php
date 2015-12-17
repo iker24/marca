@@ -230,7 +230,13 @@ class categoriasController extends Controller
 public function buscarAction()
     {
        
-        return $this->render('uniMarcaBundle:categorias:buscar.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('uniMarcaBundle:categorias')->findAll();
+
+        return $this->render('uniMarcaBundle:categorias:buscar.html.twig', array(
+            'entities' => $entities,
+        ));
     }
     
     
@@ -241,8 +247,10 @@ public function buscarAction()
    // $nom= $request->request->get('nombre'); // Modo symfony2
         
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('uniMarcaBundle:categorias')->findByDescCat($nom);
+        if ($nom=="Todas")
+            $entities = $em->getRepository('uniMarcaBundle:categorias')->findAll();
+        else
+            $entities = $em->getRepository('uniMarcaBundle:categorias')->findByDescCat($nom);
         
         return $this->render('uniMarcaBundle:categorias:encontrado.html.twig', array(
             'entities' => $entities,
