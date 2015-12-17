@@ -492,3 +492,7 @@ f9e88a,127.0.0.1,GET,http://www.nmarca.com/app_dev.php/categorias/1/show,1450345
 26939e,127.0.0.1,GET,http://www.nmarca.com/app_dev.php/categorias/buscar,1450345664,
 e9c4b4,127.0.0.1,POST,http://www.nmarca.com/app_dev.php/categorias/encontrado,1450345670,
 1c0f53,127.0.0.1,POST,http://www.nmarca.com/app_dev.php/categorias/encontrado,1450346043,
+6bafc7,127.0.0.1,GET,http://www.nmarca.com/app_dev.php/categorias/1/show,1450346543,
+057dc0,127.0.0.1,GET,http://www.nmarca.com/app_dev.php/categorias/1/show,1450346561,
+57e409,127.0.0.1,GET,http://www.nmarca.com/app_dev.php/categorias/,1450346563,
+0d091f,127.0.0.1,GET,http://www.nmarca.com/app_dev.php/categorias/buscar,1450346571,
