@@ -227,6 +227,27 @@ class categoriasController extends Controller
     }
     
  
+public function buscarAction()
+    {
+       
+        return $this->render('uniMarcaBundle:categorias:buscar.html.twig');
+    }
+    
+    
+     public function encontradoAction()
+    {
+          
+         $nom= $_POST['nombre']; // Coger variables usando php clásico.
+   // $nom= $request->request->get('nombre'); // Modo symfony2
+        
+        $em = $this->getDoctrine()->getManager();
 
+        $entities = $em->getRepository('uniMarcaBundle:categorias')->findByDescCat($nom);
+        
+        return $this->render('uniMarcaBundle:categorias:encontrado.html.twig', array(
+            'entities' => $entities,
+            'descCat'=> $nom,
+        ));
+    }
 
 }

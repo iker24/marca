@@ -14,7 +14,10 @@ categorias_create:
     path:     /create
     defaults: { _controller: "uniMarcaBundle:categorias:create" }
     requirements: { _method: post }
-
+categorias_encontrado:
+    path:     /encontrado
+    defaults: { _controller: "uniMarcaBundle:categorias:encontrado" }
+    
 categorias_edit:
     path:     /{id}/edit
     defaults: { _controller: "uniMarcaBundle:categorias:edit" }
@@ -28,3 +31,10 @@ categorias_delete:
     path:     /{id}/delete
     defaults: { _controller: "uniMarcaBundle:categorias:delete" }
     requirements: { _method: post|delete }
+
+categorias_buscar:
+    path:     /buscar
+    defaults: { _controller: "uniMarcaBundle:categorias:buscar" }
+    
+    
+    

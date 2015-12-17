@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    Buscar una categoria
+    <br>Buscar autor:
+<form action="{{path('categorias_encontrado')}}" method="POST">
+    <input type="text" name="nombre" value="Introduzca la categoria:">
+    <input type="submit" value="Buscar">
+</form>
+ {% endblock %}

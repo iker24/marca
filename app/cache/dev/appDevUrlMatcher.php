@@ -213,6 +213,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_categorias_create:
 
+            // categorias_encontrado
+            if ($pathinfo === '/categorias/encontrado') {
+                return array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\categoriasController::encontradoAction',  '_route' => 'categorias_encontrado',);
+            }
+
             // categorias_edit
             if (preg_match('#^/categorias/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorias_edit')), array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\categoriasController::editAction',));
@@ -239,6 +244,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'categorias_delete')), array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\categoriasController::deleteAction',));
             }
             not_categorias_delete:
+
+            // categorias_buscar
+            if ($pathinfo === '/categorias/buscar') {
+                return array (  '_controller' => 'uni\\bundle\\marcaBundle\\Controller\\categoriasController::buscarAction',  '_route' => 'categorias_buscar',);
+            }
 
         }
 

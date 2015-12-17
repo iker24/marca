@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+   <center><h1>Listado de categorias{{descCat}}</h1></center>
+
+        <tbody>
+        {% for entity in entities %}
+            
+                <a href="{{ path('categorias_show', { 'id': entity.id }) }}">{{ entity.descCat }}</a>
+                <br>
+                
+                
+            
+                
+                
+                
+               
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('noticias_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+ {% endblock %}
